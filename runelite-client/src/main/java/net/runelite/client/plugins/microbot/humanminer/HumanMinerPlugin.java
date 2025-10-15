@@ -97,7 +97,7 @@ public class HumanMinerPlugin extends Plugin {
             configureAntiban();
 
             // Start the script
-            Microbot.getClientThread().runOnClientThread(() -> {
+            Microbot.getClientThread().invoke(() -> {
                 if (script.run(config)) {
                     log.info("Human Miner started mining {}", config.rockType().getName());
                     Microbot.showMessage("Human Miner started!");
@@ -105,7 +105,6 @@ public class HumanMinerPlugin extends Plugin {
                     log.error("Failed to start Human Miner");
                     Microbot.showMessage("Failed to start Human Miner");
                 }
-                return true;
             });
         } else {
             // Stop the script

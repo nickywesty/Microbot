@@ -191,7 +191,7 @@ public class HumanMinerScript extends Script {
 
         // Drop all items except pickaxe
         Rs2Inventory.dropAllExcept(item ->
-            item.name != null && item.name.toLowerCase().contains("pickaxe")
+            item.getName() != null && item.getName().toLowerCase().contains("pickaxe")
         );
 
         // Add human-like delay after dropping
@@ -204,7 +204,7 @@ public class HumanMinerScript extends Script {
         // Find the nearest rock of the selected type
         int[] rockIds = selectedRock.getObjectIds();
 
-        return Rs2GameObject.findObjectById(rockIds[0]);
+        return Rs2GameObject.getGameObject(rockIds[0]);
     }
 
     private void mineRock(GameObject rock) {

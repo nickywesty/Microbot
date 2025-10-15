@@ -125,7 +125,7 @@ public class HumanMinerOverlay extends OverlayPanel {
 
             // Find all rocks of the selected type
             for (int rockId : rockIds) {
-                GameObject rock = Rs2GameObject.findObjectById(rockId);
+                GameObject rock = Rs2GameObject.getGameObject(rockId);
 
                 if (rock != null) {
                     drawRockHighlight(graphics, rock);
